@@ -1,7 +1,6 @@
 from models.lesson import Lesson, lesson_init
 from service.take_schedule import take_schedule
 
-
 def parse_schedule() -> list[list[list[Lesson]]]:
     unparsed_weeks_schedule = take_schedule()[0]["schedule"]
     parsed_schedule = []

@@ -2,7 +2,7 @@ import os
 
 
 def bot_secret_token() -> str:
-    secret = os.getenv("BOT_SECRET")
+    secret = os.getenv("BOT_TOKEN")
     if not secret:
         return ""
     return secret

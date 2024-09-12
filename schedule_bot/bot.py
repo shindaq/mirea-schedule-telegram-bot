@@ -16,7 +16,7 @@ load_dotenv(override=True)
 
 router = Router()
 
-parsed_schedule = parse_schedule()
+parsed_schedule = None
 
 
 def get_keyboard():
@@ -78,7 +78,7 @@ async def schedule_handler(message: types.Message, bot: Bot) -> None:
             text = await build_schedule_message(
                 lessons=None, day_of_the_week=current_day_of_week)
         else:
-            schedule = parsed_schedule[current_week][current_day_of_week]
+            schedule = parsed_schedule[current_week][0]
             text = await build_schedule_message(
                 lessons=schedule, day_of_the_week=current_day_of_week)
         await message.answer(text,
