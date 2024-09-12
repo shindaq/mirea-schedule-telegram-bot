@@ -9,6 +9,6 @@ def take_schedule():
         with httpx.Client() as client:
             response = client.get(api_schedule_endpoint(),
                                   params={'name': group_name()})
-            return response.json()
+            return
     except httpx.HTTPError as e:
         logger.warning(e)
